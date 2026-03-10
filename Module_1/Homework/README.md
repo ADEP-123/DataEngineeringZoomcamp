@@ -17,23 +17,25 @@ docker run -it --entrypoint bash python:3.13
 pip --version
 ```
 
-## Answer: 
+## Answer:
+
 - `25.3`
 
 # Question 2. Understanding Docker networking and docker-compose
 
 Given the following `docker-compose.yaml`, what is the `hostname` and `port` that pgadmin should use to connect to the postgres database?
+
 ```yaml
 services:
   db:
     container_name: postgres
     image: postgres:17-alpine
     environment:
-      POSTGRES_USER: 'postgres'
-      POSTGRES_PASSWORD: 'postgres'
-      POSTGRES_DB: 'ny_taxi'
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "postgres"
+      POSTGRES_DB: "ny_taxi"
     ports:
-      - '5433:5432'
+      - "5433:5432"
     volumes:
       - vol-pgdata:/var/lib/postgresql/data
 
@@ -62,6 +64,6 @@ volumes:
 - **db:5432**
 
 ## Answer:
+
 - `hostname:port / db:5432`
-
-
+ 
