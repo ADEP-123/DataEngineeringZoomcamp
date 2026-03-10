@@ -17,7 +17,8 @@ docker run -it --entrypoint bash python:3.13
 pip --version
 ```
 
-_Asnwer: 25.3_
+## Answer: 
+- `25.3`
 
 # Question 2. Understanding Docker networking and docker-compose
 
@@ -54,6 +55,8 @@ volumes:
     name: vol-pgadmin_data
 ```
 
-Answer:
+## Answer:
 - hostname: db
 - port: 5432
+
+
