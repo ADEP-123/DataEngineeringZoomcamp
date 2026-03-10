@@ -55,8 +55,13 @@ volumes:
     name: vol-pgadmin_data
 ```
 
+- postgres:5433
+- localhost:5432
+- db:5433
+- postgres:5432
+- **db:5432**
+
 ## Answer:
-- hostname: db
-- port: 5432
+- `hostname:port / db:5432`
 
 
