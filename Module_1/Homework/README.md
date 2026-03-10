@@ -139,3 +139,32 @@ LIMIT 1;
 ## Answer:
 
 - `East Harlem North`
+
+## Question 6. Largest tip
+For the passengers picked up in the zone named "East Harlem North" in November 2025, which was the drop off zone that had the largest tip?
+
+- JFK Airport
+- Yorkville West
+- East Harlem North
+- **LaGuardia Airport**
+
+Execute this command into the database
+
+```sql
+SELECT 
+	dz."Zone" AS dropoff_zone,
+	tr.tip_amount AS tip_amount
+FROM trip_data AS tr
+JOIN taxi_zone AS pz
+	ON tr."PULocationID" = pz."LocationID"
+JOIN taxi_zone AS dz
+	ON tr."DOLocationID" = dz."LocationID"
+WHERE tr.lpep_pickup_datetime <= '2025-11-30'
+	AND tr.lpep_pickup_datetime > '2025-10-31'
+	AND pz."Zone" = 'East Harlem North'
+ORDER BY tip_amount DESC
+LIMIT 1;
+```
+
+## Answer:
+- `LaGuardia Airport`
