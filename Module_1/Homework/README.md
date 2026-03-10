@@ -66,4 +66,24 @@ volumes:
 ## Answer:
 
 - `hostname:port / db:5432`
- 
+
+# Question 3. Counting short trips
+
+For the trips in November 2025 (lpep_pickup_datetime between '2025-11-01' and '2025-12-01', exclusive of the upper bound), how many trips had a trip_distance of less than or equal to 1 mile?
+
+- 7,853
+- **8,007**
+- 8,254
+- 8,421
+
+Execute command into database:
+
+```sql
+SELECT COUNT(*)
+FROM trip_data
+WHERE lpep_pickup_datetime >= '2025-11-01'
+  AND lpep_pickup_datetime < '2025-12-01'
+  AND trip_distance <= 1;
+```
+## Answer:
+- `8007`
