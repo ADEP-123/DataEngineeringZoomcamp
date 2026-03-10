@@ -85,5 +85,32 @@ WHERE lpep_pickup_datetime >= '2025-11-01'
   AND lpep_pickup_datetime < '2025-12-01'
   AND trip_distance <= 1;
 ```
+
 ## Answer:
+
 - `8007`
+
+# Question 4. Longest trip for each day
+
+Which was the pick up day with the longest trip distance? Only consider trips with trip_distance less than 100 miles (to exclude data errors).
+
+Use the pick up time for your calculations.
+
+- **2025-11-14**
+- 2025-11-20
+- 2025-11-23
+- 2025-11-25
+
+Execute command into database:
+
+```sql
+SELECT lpep_pickup_datetime
+FROM trip_data
+WHERE trip_distance < 100
+ORDER BY trip_distance DESC
+LIMIT 1;
+```
+
+## Answer:
+
+- `2025-11-14`
