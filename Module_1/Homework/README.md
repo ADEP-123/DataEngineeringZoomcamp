@@ -114,3 +114,28 @@ LIMIT 1;
 ## Answer:
 
 - `2025-11-14`
+
+# Question 5. Biggest pickup zone
+
+Which was the pickup zone with the largest total_amount (sum of all trips) on November 18th, 2025?
+
+- **East Harlem North**
+- East Harlem South
+- Morningside Heights
+- Forest Hills
+
+```sql
+SELECT tz."Zone"
+FROM trip_data AS tr
+JOIN taxi_zone AS tz
+	ON tr."PULocationID" = tz."LocationID"
+WHERE tr.lpep_pickup_datetime > '2025-11-17'
+	AND tr.lpep_pickup_datetime < '2025-11-19'
+GROUP BY tz."Zone"
+ORDER BY COUNT(*) DESC
+LIMIT 1;
+```
+
+## Answer:
+
+- `East Harlem North`
