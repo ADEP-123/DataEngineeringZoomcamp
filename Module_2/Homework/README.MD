@@ -60,3 +60,25 @@ SELECT COUNT(*) FROM `zoomcamp-489722.demo_taxi_zoomcamp.green_tripdata` WHERE l
 
 Result: `1734051`
 
+# 5. How many rows are there for the Yellow Taxi data for the March 2021 CSV file?
+
+- 1,428,092
+- 706,911
+- **1,925,152**
+- 2,561,031
+
+## Answer
+
+Run flow 08 with mont 3 and year 2021 on yellow taxi data, then get into details in google cloud
+
+Result : `1952152`
+
+## 6. How would you configure the timezone to New York in a Schedule trigger?
+
+- Add a timezone property set to EST in the Schedule trigger configuration
+- **Add a timezone property set to America/New_York in the Schedule trigger configuration**
+- Add a timezone property set to UTC-5 in the Schedule trigger configuration
+- Add a location property set to New_York in the Schedule trigger configuration
+
+# Answer
+Kestra requires IANA timezone names
